@@ -1,0 +1,18 @@
+<div class="demo-card-wide mdl-card mdl-shadow--2dp" style="width: 100%">
+	<h3>
+		Comments #<span ng-bind="id"></span>
+	</h3>
+	<div ng-repeat="comment in commentsPerItem track by $index">
+		<span ng-bind="comment"></span>
+		<hr>
+	</div>
+	<form action="#">
+	  <div class="mdl-textfield mdl-js-textfield">
+	    <input class="mdl-textfield__input" type="text" id="sample2" ng-model="newComment">
+	    <label class="mdl-textfield__label" for="sample2">Type comment here...</label>
+	  </div>
+	 	<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" ng-click="addComment(newComment)">
+		  Add new
+		</button>
+	</form>
+</div>
