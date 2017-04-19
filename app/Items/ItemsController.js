@@ -7,7 +7,7 @@ app.controller('ItemsController', function ($scope, StoringDefaultsService, Cach
 		$scope.items.push({
 			id: $scope.items.length + 1,
 			itemName: itemName,
-			commentsPerItem: 0
+			commentsQuantity: 0
 		});
 		CachingService.setItems($scope.items);
 	};

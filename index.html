@@ -50,7 +50,7 @@
 							    <ul class="demo-list-two mdl-list">
 							      <li class="mdl-list__item mdl-list__item--two-line" ng-repeat="item in items track by $index">
 							        <span class="mdl-list__item-primary-content">
-							          <a ng-href="#items/{{item.id}}">
+							          <a ng-href="#items/{{$index}}">
 							          	<span ng-bind="item.itemName"></span>
 							          	<span ng-bind="item.commentsQuantity"></span>
 							          </a>

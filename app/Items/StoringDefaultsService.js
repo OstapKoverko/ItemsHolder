@@ -1,10 +1,10 @@
 app.service('StoringDefaultsService', function() {
   // Service for storing default items and comments
   var comments = [{
-    itemId: 0,
+    itemId: 1,
     commentsPerItem: []
   }, {
-    itemId: 1,
+    itemId: 2,
     commentsPerItem: []
   }];
   for (var i = 0; i <= 131; i++) {
