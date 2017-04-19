@@ -14,7 +14,7 @@ app.controller('сommentsController', function ($scope, $routeParams, CachingSer
 		});
 		debugger;
 	};
-	
+	  
 	// Load comments from Local Storage
 	CachingService.getComments(function(result) {
 		comments = result;
