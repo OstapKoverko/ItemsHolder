@@ -1,0 +1,46 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+}
+
+main {
+  display: flex;
+  margin-left: 210px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.navigation {
+  position: absolute;
+  height: 100%;
+  width: 200px;
+  background-color: rgb(3,84,140);
+}
+
+.navigation a {
+  display: block;
+  padding: 1px 30px;
+  margin-top: 40px;
+  color: white;
+}
+
+.navigation a:hover {
+  background-color: rgb(255,82,57);
+}
+
+.chapter {
+  display: block;
+  box-sizing: border-box;
+  font-size: 40px;
+  line-height: 64px;
+  padding-left: 30px;
+}
+
+
+
+.card {
+  display: block;
+  width: calc(50% - 16px);
+}

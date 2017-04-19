@@ -1,13 +1,14 @@
-app.controller('ItemsController', function ($scope, StoringDefaultsService, CachingService,  UpgradeDomService) {
+app.controller('ItemsController', function ($scope, StoringDefaultsService, CachingService) {
 	$scope.itemsVisible = true;	
 	$scope.setItemsVisible = function () {
 		$scope.itemsVisible = true;
 	};
+	
 	$scope.addItem = function (itemName) {
 		$scope.items.push({
 			id: $scope.items.length + 1,
 			itemName: itemName,
-			commentsQuantity: 0
+			commentsQuantity: null
 		});
 		CachingService.setItems($scope.items);
 	};
@@ -26,5 +27,4 @@ app.controller('ItemsController', function ($scope, StoringDefaultsService, Cach
 		$scope.items = result;
 	});
 
-	UpgradeDomService.upgradeDom();
 });

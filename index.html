@@ -5,81 +5,68 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Items Holder</title>
 		
-		<!-- Material Design Lite Style -->
-		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-		<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.yellow-indigo.min.css"/>
+		<link rel="stylesheet" href="css/index.css" type="text/css">
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 			
 	</head>
 	<body>
 		<div ng-app="myApp" ng-controller="ItemsController">
-			<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-				<header class="mdl-layout__header">
-					<div class="mdl-layout__header-row">
-						<span class="mdl-layout-title">Title</span>
+
+			<!--  NAVIGATION BAR  -->
+			<nav class="navigation">
+				<span class="chapter">Main</span>
+				<a href="" ng-click="setItemsVisible()">
+					<h3>Overview</h3>
+				</a>
+			</nav>
+			<!--  /NAVIGATION BAR  -->
+			
+			<!--  PAGE CONTENT  -->
+			<main>
+				
+				<!--  Items card  -->
+				<div class="card" ng-if="itemsVisible" style="width: 100%">
+					<span class="chapter">Items</span>
+					<div>
+						<form action="#">
+						  <div>
+						    <input type="text" id="sample1" ng-model="item">
+						    <label for="sample1">Type name here...</label>
+						  </div>
+						 	<button ng-click="addItem(item)">
+							  Add new
+							</button>
+						</form>
 					</div>
-				</header>
-				<div class="mdl-layout__drawer">
-					<span class="mdl-layout-title">Main</span>
-					<nav class="mdl-navigation">
-						<a class="mdl-navigation__link" href="" ng-click="setItemsVisible()">Overview</a>
-					</nav>
+			    <ul>
+			      <li ng-repeat="item in items track by $index">
+			        <span>
+			          <a ng-href="#items/{{$index}}">
+			          	<h5 ng-bind="item.itemName"></h5>
+			          	<span ng-bind="item.commentsQuantity"></span>
+			          </a>
+			        </span>
+			        <span>
+			          <button ng-click="deleteItem($index)">
+									Delete
+								</button>
+			        </span>
+			        <hr>
+			      </li>  
+			    </ul>
 				</div>
-				<main class="mdl-layout__content">
-					
-					<!--  PAGE CONTENT  -->
-					<div class="page-content">
-						<div class="mdl-grid">
-						  <div class="mdl-cell mdl-cell--6-col">
-						
-								<!--  Items card  -->
-								<div class="demo-card-wide mdl-card mdl-shadow--2dp" ng-if="itemsVisible" style="width: 100%">
-									<div class="mdl-card__title">
-										<h3 class="mdl-card__title-text">Items</h3>
-									</div>
-									<div class="mdl-card__supporting-text">
-										<form action="#">
-										  <div class="mdl-textfield mdl-js-textfield">
-										    <input class="mdl-textfield__input" type="text" id="sample1" ng-model="item">
-										    <label class="mdl-textfield__label" for="sample1">Type name here...</label>
-										  </div>
-										 	<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" ng-click="addItem(item)">
-											  Add new
-											</button>
-										</form>
-									</div>
-							    <ul class="demo-list-two mdl-list">
-							      <li class="mdl-list__item mdl-list__item--two-line" ng-repeat="item in items track by $index">
-							        <span class="mdl-list__item-primary-content">
-							          <a ng-href="#items/{{$index}}">
-							          	<span ng-bind="item.itemName"></span>
-							          	<span ng-bind="item.commentsQuantity"></span>
-							          </a>
-							        </span>
-							        <span class="mdl-list__item-secondary-content">
-							          <button class="mdl-button mdl-js-button mdl-button--accent" ng-click="deleteItem($index)">
-  												Delete
-												</button>
-							        </span>
-							        <hr>
-							      </li>  
-							    </ul>
-								</div>
-								<!--  /Items card  -->
-							</div>
+				<!--  /Items card  -->
 							
-							<div class="mdl-cell mdl-cell--6-col">
-								<!--  Comments card  -->
-								<div ng-view></div>
-								<!--  /Comments card  -->
-							</div>
-							
-						</div>
-					</div>
-					<!--  /PAGE CONTENT  -->
+				<!--  Comments card  -->
+				<div class="card">
+					<div ng-view></div>
+				</div>
+				<!--  /Comments card  -->
 					
-				</main>
-			</div>
-		</div>
+			</main>
+			<!--  /PAGE CONTENT  -->
+			
+		</div>	
 	</body>
 	
 	<!-- Angular Library -->
@@ -88,16 +75,12 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-animate.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-aria.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-messages.min.js"></script>
-	
-	<!-- Material Design Lite Library -->
-	<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 
 	<!-- My Library -->
-	<script type="text/javascript" src="app/app.js"></script>
-	<script type="text/javascript" src="app/Items/ItemsController.js"></script>
-	<script type="text/javascript" src="app/Comments/CommentsController.js"></script>
-	<script type="text/javascript" src="app/Items/StoringDefaultsService.js"></script>
-	<script type="text/javascript" src="app/CachingService.js"></script>
-	<script type="text/javascript" src="app/UpgradeDomService.js"></script>
+	<script src="app/app.js"></script>
+	<script src="app/Items/ItemsController.js"></script>
+	<script src="app/Comments/CommentsController.js"></script>
+	<script src="app/Items/StoringDefaultsService.js"></script>
+	<script src="app/CachingService.js"></script>
 	
 </html>
