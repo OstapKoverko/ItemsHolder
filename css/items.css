@@ -1,0 +1,16 @@
+.item-card a {
+  color: black;  
+}
+
+.delete-button {
+  /* position: absolute; */
+  right: 20px;
+  /* top: 5px; */
+  width: 20%;
+  border-radius: 5px;
+  border-style: solid;
+  border-color: rgb(255, 255, 100);
+  background-color: white;
+  color: rgb(255, 48, 88);
+  height: 30px;
+}

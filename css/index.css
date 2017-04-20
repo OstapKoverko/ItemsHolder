@@ -1,15 +1,32 @@
 body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
+  background-color: rgb(59,59,59);
 }
 
 main {
   display: flex;
-  margin-left: 210px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  position: relative;
+  margin-left: 230px;
 }
 
 a {
   text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+input {
+  border-color: rgb(204, 204, 204);
+  border-style: double;
+  border-radius: 5px;
+  height: 25px;
+  width: 70%;
 }
 
 .navigation {
@@ -21,7 +38,7 @@ a {
 
 .navigation a {
   display: block;
-  padding: 1px 30px;
+  padding: 1px 20px;
   margin-top: 40px;
   color: white;
 }
@@ -33,14 +50,52 @@ a {
 .chapter {
   display: block;
   box-sizing: border-box;
-  font-size: 40px;
+  font-size: 32px;
   line-height: 64px;
-  padding-left: 30px;
+  padding-left: 20px;
 }
-
-
 
 .card {
   display: block;
-  width: calc(50% - 16px);
+  position: relative;
+  width: 100%;
+  max-width: 45%;
+  margin: 30px 5px;
+  padding: 20px;
+  background-color: white;
 }
+
+.comments-card {
+  position: relative;
+  display: flex;
+  margin-right: 30px;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.form {
+  display: block;
+}
+
+.button {
+  border: none;
+  border-radius: 5px;
+  height: 30px;
+  width: 27%;
+  color: white;
+  background-color: rgb(232,204,157);
+}
+
+.counter {
+  border: none;
+  border-radius: 10px;
+  color: white;
+  background-color: rgb(232,204,157);
+}
+
+
+.delete-button :hover {
+  background-color: rgb(255, 255, 227);
+}
+

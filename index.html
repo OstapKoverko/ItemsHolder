@@ -5,7 +5,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Items Holder</title>
 		
+		<link rel="stylesheet" href="css/normalize.css" type="text/css">
 		<link rel="stylesheet" href="css/index.css" type="text/css">
+		<link rel="stylesheet" href="css/items.css" type="text/css">
+		<link rel="stylesheet" href="css/comments.css" type="text/css">
 		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 			
 	</head>
@@ -25,29 +28,24 @@
 			<main>
 				
 				<!--  Items card  -->
-				<div class="card" ng-if="itemsVisible" style="width: 100%">
+				<div class="card item-card">
 					<span class="chapter">Items</span>
-					<div>
+					<div class="form">
 						<form action="#">
-						  <div>
-						    <input type="text" id="sample1" ng-model="item">
-						    <label for="sample1">Type name here...</label>
-						  </div>
-						 	<button ng-click="addItem(item)">
-							  Add new
-							</button>
+						  <input type="text" ng-model="item" value="Type name here...">
+						 	<button class="button" ng-click="addItem(item)">Add new</button>
 						</form>
 					</div>
 			    <ul>
 			      <li ng-repeat="item in items track by $index">
 			        <span>
 			          <a ng-href="#items/{{$index}}">
-			          	<h5 ng-bind="item.itemName"></h5>
-			          	<span ng-bind="item.commentsQuantity"></span>
+			          	<span ng-bind="item.itemName"></span>
+			          	<span class="counter" ng-bind="item.commentsQuantity"></span>
 			          </a>
 			        </span>
 			        <span>
-			          <button ng-click="deleteItem($index)">
+			          <button class="delete-button" ng-click="deleteItem($index)">
 									Delete
 								</button>
 			        </span>
@@ -58,7 +56,7 @@
 				<!--  /Items card  -->
 							
 				<!--  Comments card  -->
-				<div class="card">
+				<div class="card comments-card">
 					<div ng-view></div>
 				</div>
 				<!--  /Comments card  -->

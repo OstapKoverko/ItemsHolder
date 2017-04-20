@@ -1,4 +1,4 @@
-Items Holder 1.2
+Items Holder 1.3
 ------------------------
 
 My third simple project on AngularJS.
@@ -12,6 +12,8 @@ You can create some items, comments and delete their.
 
 Release notes
 ------------
+Release 1.3
++ Improved style.
 
 Release 1.2
 + Create own style.

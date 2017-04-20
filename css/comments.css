@@ -1,0 +1,23 @@
+.avatar {
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  background-color: rgb(232, 204, 157);
+  color: rgb(232, 204, 157);
+}
+
+.comment {
+  margin-left: 65px;
+}
+
+.comment-button {
+  float: left;
+  height: 50px;
+  width: 50px;
+}
+
+.commentimput {
+  float: right;
+  height: 75px;
+  width: calc(100% - 65px);
+}

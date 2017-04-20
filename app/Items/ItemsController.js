@@ -1,9 +1,4 @@
 app.controller('ItemsController', function ($scope, StoringDefaultsService, CachingService) {
-	$scope.itemsVisible = true;	
-	$scope.setItemsVisible = function () {
-		$scope.itemsVisible = true;
-	};
-	
 	$scope.addItem = function (itemName) {
 		$scope.items.push({
 			id: $scope.items.length + 1,
